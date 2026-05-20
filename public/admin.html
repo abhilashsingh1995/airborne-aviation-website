@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard | Airborne Aviation</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1d33">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,400;1,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin">
+  <div class="container">
+
+    <header style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;">
+      <div>
+        <span class="eyebrow">Internal · Airborne Aviation</span>
+        <h1>Lead dashboard</h1>
+      </div>
+      <div style="font-family:var(--f-mono);font-size:.78rem;color:var(--c-muted);">
+        <span id="last-refresh"></span> · <button id="refresh-btn" class="btn btn-ghost" style="padding:.4rem 1rem;font-size:.82rem;">Refresh</button>
+      </div>
+    </header>
+
+    <!-- Stats cards -->
+    <div class="admin-stats" id="stats">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="leads">Leads</button>
+      <button class="tab" data-tab="contacts">Contact messages</button>
+    </div>
+
+    <!-- Leads table -->
+    <div id="tab-leads" class="table-wrap">
+      <table class="leads">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Source</th>
+            <th>Message</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="leads-rows">
+          <tr><td colspan="9" style="text-align:center;color:var(--c-muted);padding:2rem;">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Contacts table (hidden by default) -->
+    <div id="tab-contacts" class="table-wrap" style="display:none;">
+      <table class="leads">
+        <thead>
+          <tr>
+            <th>#</th><th>Date</th><th>Name</th><th>Email</th><th>Phone</th><th>Subject</th><th>Message</th>
+          </tr>
+        </thead>
+        <tbody id="contacts-rows">
+          <tr><td colspan="7" style="text-align:center;color:var(--c-muted);padding:2rem;">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;font-size:.82rem;color:var(--c-muted);">
+      Need help? Replace this dashboard with your CRM or download data as CSV.
+      Default key is <code style="background:var(--c-cream-2);padding:.1rem .4rem;border-radius:3px;">airborne-2026</code> —
+      change it via the <code>ADMIN_KEY</code> environment variable in production.
+    </p>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

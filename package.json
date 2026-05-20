@@ -1,0 +1,19 @@
+{
+  "name": "airborne-aviation-website",
+  "version": "1.0.0",
+  "description": "Airborne Aviation Academy — DGCA CPL ground classes Dwarka. Static frontend, Express backend, SQLite database.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "better-sqlite3": "^11.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Airborne Aviation Academy",
+  "license": "MIT"
+}
