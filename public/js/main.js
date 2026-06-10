@@ -72,3 +72,32 @@ function handleForm(form, endpoint) {
     }
   });
 }
+// Hero Image Slider
+
+const heroImages = [
+  "/images/classroom1.jpg",
+  "/images/classroom2.jpg",
+  "/images/classroom3.jpg",
+  "/images/library.jpg",
+  "/images/office-area.jpg",
+  "/images/meeting-hall.jpg"
+];
+
+let currentHero = 0;
+
+setInterval(() => {
+
+  const heroImg = document.getElementById("heroImage");
+
+  if(heroImg){
+
+    currentHero++;
+
+    if(currentHero >= heroImages.length){
+      currentHero = 0;
+    }
+
+    heroImg.src = heroImages[currentHero];
+  }
+
+}, 3000);
