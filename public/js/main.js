@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── 2) Lead form (Book a Demo / Free Counselling) ─────────────
   const leadForm = document.querySelector('#lead-form');
-  if (leadForm) handleForm(leadForm, '/api/leads');
-
+  if (leadForm) handleForm(
+  leadForm,
+  'https://abhiaviationdwarka.app.n8n.cloud/webhook/airborne-leads'
+);
   // ─── 3) Contact form (on contact.html) ─────────────────────────
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) handleForm(contactForm, '/api/contacts');
